@@ -11,7 +11,6 @@ public class VariableExpression implements IExpression {
 
     public VariableExpression(String variable_name){
         this.identifier = variable_name;
-        this.value = null;
     }
 
     @Override
