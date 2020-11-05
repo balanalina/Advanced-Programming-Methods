@@ -28,7 +28,7 @@ public class LogicExpression implements IExpression{
             return logicOperand.valueOf(op);
         }
         catch (Exception e){
-            throw new myException(e.getMessage());
+            throw new myException("Unexpected operand!");
         }
     }
 

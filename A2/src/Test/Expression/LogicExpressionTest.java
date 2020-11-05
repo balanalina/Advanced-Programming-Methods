@@ -15,7 +15,7 @@ import org.junit.jupiter.api.function.Executable;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LogicExpressionTest {
-    ImyDictionary<String, Value> sym_table;
+    private ImyDictionary<String, Value> sym_table;
 
     @BeforeEach
     void setUp() {
@@ -39,7 +39,8 @@ class LogicExpressionTest {
         });
         IExpression logic_expr = new LogicExpression(new ValueExpression(new BoolValue()),new VariableExpression("a"),"and");
         sym_table.put("a",new BoolValue(true));
-        logic_expr.eval(this.sym_table);
+        BoolValue expr = (BoolValue) logic_expr.eval(sym_table);
+        assertEquals(new BoolValue().getValue(), expr.getValue());
     }
 
     @Test
