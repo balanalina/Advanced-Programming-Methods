@@ -5,7 +5,6 @@ import Model.Exception.myException;
 import Model.Type.BoolType;
 import Model.Type.Type;
 import Model.Value.BoolValue;
-import Model.Value.IntValue;
 import Model.Value.Value;
 
 enum logicOperand{
@@ -17,10 +16,20 @@ public class LogicExpression implements IExpression{
     IExpression e2;
     logicOperand op;
 
-    public LogicExpression(IExpression e1, IExpression e2,logicOperand op){
+
+    public LogicExpression(IExpression e1, IExpression e2,String op) {
         this.e1 = e1;
         this.e2 = e2;
-        this.op = op;
+        this.op = this.checkOp(op);
+    }
+
+    private logicOperand checkOp(String op) throws myException{
+        try{
+            return logicOperand.valueOf(op);
+        }
+        catch (Exception e){
+            throw new myException(e.getMessage());
+        }
     }
 
     @Override

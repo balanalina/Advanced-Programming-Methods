@@ -3,6 +3,7 @@ package Model.Expression;
 import ADT.ImyDictionary;
 import Model.Exception.myException;
 import Model.Type.Type;
+import Model.Value.IntValue;
 import Model.Value.Value;
 
 public class VariableExpression implements IExpression {
@@ -11,10 +12,15 @@ public class VariableExpression implements IExpression {
 
     public VariableExpression(String variable_name){
         this.identifier = variable_name;
+        this.value = null;
     }
 
     @Override
-    public String toString(){ return this.value.toString(); }
+    public String toString(){
+        if(this.value != null)
+            return this.value.toString();
+        return "null";
+    }
 
     //look for the identifier in the symbol table
     @Override
