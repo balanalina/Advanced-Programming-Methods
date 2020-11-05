@@ -71,4 +71,10 @@ class myDictionaryTest {
         assertEquals(2, values.size());
         assertTrue(values.contains(1));
     }
+
+    @Test
+    void containsKey(){
+        assertFalse(this.myDictionaryTest.containsKey("fsvfe"));
+        assertTrue(this.myDictionaryTest.containsKey("a"));
+    }
 }

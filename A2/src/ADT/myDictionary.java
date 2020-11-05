@@ -44,6 +44,9 @@ public class myDictionary<K,V> implements ImyDictionary<K,V> {
     }
 
     @Override
+    public boolean containsKey(K key){ return this.dictionary.containsKey(key); }
+
+    @Override
     public String toString(){
         return super.toString();
     }

@@ -27,6 +27,9 @@ public interface ImyDictionary<K,V> {
     //Returns an enumeration of the values in this dictionary.
     public Collection<V> values();
 
+    //Returns true if this map contains a mapping for the specified key.
+    public boolean containsKey(K key);
+
     public String toString();
 
 }

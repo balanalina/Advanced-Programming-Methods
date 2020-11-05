@@ -16,6 +16,7 @@ public class PrintStatement implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws myException {
         ImyList<Value> out = state.getOut_table();
+        //add the string to be printed to the out table
         out.add(this.expression.eval(state.getSymbol_table()));
         return state;
     }

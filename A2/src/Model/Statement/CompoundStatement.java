@@ -16,6 +16,7 @@ public class CompoundStatement implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws myException {
         ImyStack<IStatement> stack = state.getExecution_stack();
+        //split the compound statement and push to the stack the resulting
         stack.push(this.second_statement);
         stack.push(this.first_statement);
         return state;
