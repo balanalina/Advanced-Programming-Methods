@@ -1,5 +1,7 @@
 package ADT;
 
+import Model.Exception.myException;
+
 import java.util.*;
 
 public class myDictionary<K,V> implements ImyDictionary<K,V> {
@@ -17,7 +19,7 @@ public class myDictionary<K,V> implements ImyDictionary<K,V> {
     public V put(K key, V value) { return this.dictionary.put(key,value); }
 
     @Override
-    public V get(K key) {
+    public V get(K key) throws myException {
         return this.dictionary.get(key);
     }
 

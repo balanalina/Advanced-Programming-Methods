@@ -1,5 +1,7 @@
 package ADT;
 
+import Model.Exception.myException;
+
 import java.util.Collection;
 import java.util.Set;
 
@@ -11,7 +13,7 @@ public interface ImyDictionary<K,V> {
     public V put(K key, V value);
 
     //Returns the value to which the key is mapped in this dictionary, or null if this map contains no mapping for the key.
-    public V get(K key);
+    public V get(K key) throws myException;
 
     //Removes the entry for the specified key only if it is currently mapped to the specified value.
     public V remove(K key);
