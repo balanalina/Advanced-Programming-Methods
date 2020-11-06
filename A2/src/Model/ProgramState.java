@@ -36,6 +36,6 @@ public class ProgramState {
     //to string
     @Override
     public String toString(){
-        return "Execution Stack:\n"+ this.execution_stack+"\nSymbol Table:\n"+ this.symbol_table+"\nOut Table:\n"+ this.out_table+"\n";
+        return "Execution Stack:\n"+ this.execution_stack+"\nSymbol Table:\n"+ this.symbol_table+"\nOut Table:\n"+ this.out_table.toString()+"\n";
     }
 }

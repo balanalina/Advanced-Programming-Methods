@@ -19,5 +19,5 @@ public interface ImyList<A> {
     //Returns the number of elements in this list.
     public int size();
 
-    public String toSting();
+    public String toString();
 }

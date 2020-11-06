@@ -48,6 +48,6 @@ public class myDictionary<K,V> implements ImyDictionary<K,V> {
 
     @Override
     public String toString(){
-        return super.toString();
+        return this.dictionary.toString();
     }
 }

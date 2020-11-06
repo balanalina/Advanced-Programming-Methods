@@ -41,7 +41,5 @@ public class myList<A> implements ImyList<A> {
     }
 
     @Override
-    public String toSting() {
-        return super.toString();
-    }
+    public String toString() { return this.list.toString(); }
 }

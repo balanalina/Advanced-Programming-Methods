@@ -17,9 +17,7 @@ public class VariableExpression implements IExpression {
 
     @Override
     public String toString(){
-        if(this.value != null)
-            return this.value.toString();
-        return "null";
+        return this.identifier;
     }
 
     //look for the identifier in the symbol table

@@ -31,6 +31,6 @@ public class myStack<A> implements ImyStack<A> {
 
     @Override
     public String toString() {
-        return super.toString();
+        return this.stack.toString();
     }
 }
