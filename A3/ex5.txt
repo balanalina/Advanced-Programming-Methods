@@ -1,0 +1,66 @@
+----Start of the execution---- 
+Execution Stack:
+[(String  s ; (s=ana ; print(s);))]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(s=ana ; print(s);), String  s]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(s=ana ; print(s);)]
+Symbol Table:
+{s=}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[print(s);, s=ana]
+Symbol Table:
+{s=}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[print(s);]
+Symbol Table:
+{s=ana}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[]
+Symbol Table:
+{s=ana}
+Out Table:
+[ana]
+File Table:
+{}
+----End of execution---- 
+

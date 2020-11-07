@@ -87,4 +87,7 @@ public class ArithmeticExpression implements IExpression {
     public Type getType() {
         return new IntType();
     }
+
+    @Override
+    public String toString() { return this.e1 + this.op.toString() + this.e2;}
 }

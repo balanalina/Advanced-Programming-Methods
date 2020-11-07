@@ -1,0 +1,198 @@
+----Start of the execution---- 
+Execution Stack:
+[(String  varf ; (varf=test.in ; (OpenRFile(varf); ; (Int varc ; (ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);))))))))]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(varf=test.in ; (OpenRFile(varf); ; (Int varc ; (ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);))))))), String  varf]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(varf=test.in ; (OpenRFile(varf); ; (Int varc ; (ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);)))))))]
+Symbol Table:
+{varf=}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(OpenRFile(varf); ; (Int varc ; (ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);)))))), varf=test.in]
+Symbol Table:
+{varf=}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(OpenRFile(varf); ; (Int varc ; (ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);))))))]
+Symbol Table:
+{varf=test.in}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(Int varc ; (ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);))))), OpenRFile(varf);]
+Symbol Table:
+{varf=test.in}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(Int varc ; (ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);)))))]
+Symbol Table:
+{varf=test.in}
+Out Table:
+[]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);)))), Int varc]
+Symbol Table:
+{varf=test.in}
+Out Table:
+[]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(ReadFile(varf, varc); ; (print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);))))]
+Symbol Table:
+{varf=test.in, varc=0}
+Out Table:
+[]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);))), ReadFile(varf, varc);]
+Symbol Table:
+{varf=test.in, varc=0}
+Out Table:
+[]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(print(varc); ; (ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);)))]
+Symbol Table:
+{varf=test.in, varc=15}
+Out Table:
+[]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);)), print(varc);]
+Symbol Table:
+{varf=test.in, varc=15}
+Out Table:
+[]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(ReadFile(varf, varc); ; (print(varc); ; CloseRFile(varf);))]
+Symbol Table:
+{varf=test.in, varc=15}
+Out Table:
+[15]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(print(varc); ; CloseRFile(varf);), ReadFile(varf, varc);]
+Symbol Table:
+{varf=test.in, varc=15}
+Out Table:
+[15]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(print(varc); ; CloseRFile(varf);)]
+Symbol Table:
+{varf=test.in, varc=50}
+Out Table:
+[15]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[CloseRFile(varf);, print(varc);]
+Symbol Table:
+{varf=test.in, varc=50}
+Out Table:
+[15]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[CloseRFile(varf);]
+Symbol Table:
+{varf=test.in, varc=50}
+Out Table:
+[15, 50]
+File Table:
+{test.in=java.io.BufferedReader@1f28c152}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[]
+Symbol Table:
+{varf=test.in, varc=50}
+Out Table:
+[15, 50]
+File Table:
+{}
+----End of execution---- 
+

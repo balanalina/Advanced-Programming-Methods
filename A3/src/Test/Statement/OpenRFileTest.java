@@ -26,7 +26,7 @@ class OpenRFileTest {
 
     @BeforeEach
     void setUp() {
-        this.file = new StringValue("ok.txt");
+        this.file = new StringValue("test.in");
         this.test_statement = new OpenRFile(new ValueExpression(this.file));
         this.exception_statement = new OpenRFile(new ValueExpression(this.file));
         this.state = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(),

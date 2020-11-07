@@ -38,6 +38,6 @@ public class AssignmentStatement implements IStatement {
 
     @Override
     public String toString(){
-        return this.identifier + "=" + this.assigned_value.toString();
+        return this.identifier + "=" + this.assigned_value;
     }
 }

@@ -1,0 +1,66 @@
+----Start of the execution---- 
+Execution Stack:
+[(Int v ; (v=2 ; print(v);]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(v=2 ; print(v);, Int v]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(v=2 ; print(v);]
+Symbol Table:
+{v=0}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[print(v);, v=2]
+Symbol Table:
+{v=0}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[print(v);]
+Symbol Table:
+{v=2}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[]
+Symbol Table:
+{v=2}
+Out Table:
+[2]
+File Table:
+{}
+----End of execution---- 
+

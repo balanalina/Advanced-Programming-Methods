@@ -40,6 +40,6 @@ public class IfStatement implements IStatement{
 
     @Override
     public String toString(){
-        return "if("+this.condition.toString()+"){\n" + this.then.toString() + "\n}\nelse{\n" + this.otherwise.toString();
+        return "if("+this.condition.toString()+"){ " + this.then.toString() + " } else{ " + this.otherwise.toString() + "}";
     }
 }
