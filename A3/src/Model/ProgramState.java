@@ -6,10 +6,13 @@ import ADT.ImyStack;
 import Model.Statement.IStatement;
 import Model.Value.*;
 
+import java.io.BufferedReader;
+
 public class ProgramState {
     private ImyStack<IStatement> execution_stack;
     private ImyDictionary<String, Value> symbol_table;
     private ImyList<Value> out_table;
+    private ImyDictionary<StringValue, BufferedReader> file_table;
     private IStatement original_program;
 
     public ProgramState(ImyStack<IStatement> stack, ImyDictionary<String, Value> sym, ImyList<Value> out,

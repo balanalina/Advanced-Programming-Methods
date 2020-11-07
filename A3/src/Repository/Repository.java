@@ -32,8 +32,8 @@ public class Repository implements IRepository {
             log_file.write("----Start of the execution---- ");
             log_file.write(System.getProperty("line.separator"));
             log_file.write(this.program.get(0).toString());
-            log_file.write(System.getProperty("line.separator"));
             log_file.write("----End of execution---- ");
+            log_file.write(System.getProperty("line.separator"));
             log_file.write(System.getProperty("line.separator"));
             log_file.close();
         }
