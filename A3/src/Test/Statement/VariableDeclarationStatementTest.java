@@ -9,9 +9,12 @@ import Model.Statement.CompoundStatement;
 import Model.Statement.IStatement;
 import Model.Statement.VariableDeclarationStatement;
 import Model.Type.IntType;
+import Model.Value.StringValue;
 import Model.Value.Value;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.BufferedReader;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,7 +25,8 @@ class VariableDeclarationStatementTest {
     @BeforeEach
     void setUp() {
         this.test_statement = new VariableDeclarationStatement("sum",new IntType());
-        this.state = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(), this.test_statement);
+        this.state = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(),
+                new myDictionary<StringValue, BufferedReader>(),this.test_statement);
     }
 
     @Test

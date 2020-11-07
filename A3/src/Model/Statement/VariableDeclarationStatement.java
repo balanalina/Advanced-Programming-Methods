@@ -4,6 +4,7 @@ import ADT.ImyDictionary;
 import Model.Exception.myException;
 import Model.ProgramState;
 import Model.Type.BoolType;
+import Model.Type.IntType;
 import Model.Type.Type;
 import Model.Value.*;
 
@@ -25,7 +26,10 @@ public class VariableDeclarationStatement implements IStatement{
             if(this.id_type.equals(new BoolType()))
                 sym_table.put(this.identifier, new BoolValue());
             else
-                sym_table.put(this.identifier, new IntValue());
+                if(this.id_type.equals(new IntType()))
+                    sym_table.put(this.identifier, new IntValue());
+                else
+                    sym_table.put(this.identifier, new StringValue());
         }
         else
             throw new myException("Variable " + this.identifier + " has already been declared!");

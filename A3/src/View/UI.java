@@ -17,6 +17,7 @@ import Repository.IRepository;
 import Repository.Repository;
 import Model.Value.*;
 
+import java.io.BufferedReader;
 import java.util.Scanner;
 
 public class UI {
@@ -86,7 +87,8 @@ public class UI {
             default:
                 statement = new NopStatement();
         }
-        ProgramState prg = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(), statement);
+        ProgramState prg = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(),
+                new myDictionary<StringValue, BufferedReader>(),statement);
         IRepository repo = new Repository(prg,"ok.txt");
         Controller c = new Controller(repo);
         c.allSteps();

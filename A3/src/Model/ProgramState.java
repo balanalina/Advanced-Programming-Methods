@@ -16,10 +16,11 @@ public class ProgramState {
     private IStatement original_program;
 
     public ProgramState(ImyStack<IStatement> stack, ImyDictionary<String, Value> sym, ImyList<Value> out,
-                        IStatement prg){
+                        ImyDictionary<StringValue, BufferedReader> file, IStatement prg){
         this.execution_stack = stack;
         this.symbol_table = sym;
         this.out_table = out;
+        this.file_table = file;
         this.original_program = prg;
         this.execution_stack.push(prg);
     }
@@ -28,17 +29,20 @@ public class ProgramState {
     public ImyStack<IStatement> getExecution_stack(){ return this.execution_stack; }
     public ImyDictionary<String, Model.Value.Value> getSymbol_table() { return this.symbol_table; }
     public ImyList<Value> getOut_table() { return this.out_table; }
+    public ImyDictionary<StringValue, BufferedReader> getFile_table(){ return this.file_table; }
     public IStatement getOriginal_program() { return this.original_program; }
 
     //setters
     public void setExecution_stack(ImyStack<IStatement> new_stack) { this.execution_stack = new_stack; }
     public void setSymbol_table(ImyDictionary<String, Value> new_symbol_table){ this.symbol_table = new_symbol_table; }
     public void setOut_table(ImyList<Value> new_out_table){ this.out_table = new_out_table; }
+    public void setFile_table(ImyDictionary<StringValue, BufferedReader> new_file_table){ this.file_table = new_file_table; }
     public void setOriginal_program(IStatement new_program){ this.original_program = new_program; }
 
     //to string
     @Override
     public String toString(){
-        return "Execution Stack:\n"+ this.execution_stack+"\nSymbol Table:\n"+ this.symbol_table+"\nOut Table:\n"+ this.out_table.toString()+"\n";
+        return "Execution Stack:\n"+ this.execution_stack+"\nSymbol Table:\n"+ this.symbol_table+"\nOut Table:\n"+ this.out_table+
+                "\nFile Table:\n" + this.file_table + "\n";
     }
 }

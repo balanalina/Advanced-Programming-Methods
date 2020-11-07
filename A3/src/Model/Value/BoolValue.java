@@ -21,6 +21,14 @@ public class BoolValue implements Value {
     }
 
     @Override
+    public boolean equals(Object o){
+        if(o instanceof BoolValue)
+            return true;
+        else
+            return false;
+    }
+
+    @Override
     public Type getType() {
         return new BoolType();
     }

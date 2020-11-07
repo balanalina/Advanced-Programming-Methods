@@ -1,6 +1,7 @@
 package Test.Value;
 
 import Model.Type.BoolType;
+import Model.Type.IntType;
 import Model.Value.IntValue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +27,13 @@ class IntValueTest {
 
     @Test
     void getType() {
-        assertEquals(new IntValue(), value_0.getType());
+        assertEquals(new IntType(), value_0.getType());
         assertNotEquals(new BoolType(), value_0.getType());
+    }
+
+    @Test
+    void testEquals(){
+        assertTrue(this.value_0.equals(new IntValue()));
+        assertFalse(this.value_0.equals(54));
     }
 }

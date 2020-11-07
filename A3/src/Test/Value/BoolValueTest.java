@@ -29,4 +29,10 @@ class BoolValueTest {
         assertEquals(new BoolType(), false_value.getType());
         assertNotEquals(new IntType(), true_value.getType());
     }
+
+    @Test
+    void testEquals(){
+        assertTrue(this.false_value.equals(new BoolValue()));
+        assertFalse(this.false_value.equals(true));
+    }
 }

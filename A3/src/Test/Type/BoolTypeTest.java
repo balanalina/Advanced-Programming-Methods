@@ -2,6 +2,7 @@ package Test.Type;
 
 import Model.Type.BoolType;
 import Model.Type.IntType;
+import Model.Value.BoolValue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,5 +22,10 @@ class BoolTypeTest {
         IntType not_eq_check = new IntType();
         assertTrue(bool.equals(eq_check));
         assertFalse(bool.equals(not_eq_check));
+    }
+
+    @Test
+    void testDefaultValue(){
+        assertFalse(((BoolValue)this.bool.defaultValue()).getValue());
     }
 }

@@ -14,9 +14,12 @@ import Model.Statement.NopStatement;
 import Model.Statement.PrintStatement;
 import Model.Value.BoolValue;
 import Model.Value.IntValue;
+import Model.Value.StringValue;
 import Model.Value.Value;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.BufferedReader;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -33,7 +36,8 @@ class IfStatementTest {
         this.second_stmt = new PrintStatement(new ValueExpression(new BoolValue(true)));
         this.test_statement = new IfStatement(new LogicExpression(new ValueExpression(new BoolValue()),new ValueExpression(new BoolValue(true)),
                 "or"),this.first_stmt, this.second_stmt);
-        this.state = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(), this.test_statement);
+        this.state = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(),
+                new myDictionary<StringValue, BufferedReader>(), this.test_statement);
         this.int_condition = new IfStatement(new ArithmeticExpression(new ValueExpression(new IntValue()),
                 new ValueExpression(new IntValue(-5)),"MINUS"),this.first_stmt, this.second_stmt);
     }

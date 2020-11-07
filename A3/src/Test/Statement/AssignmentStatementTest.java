@@ -14,6 +14,8 @@ import org.junit.jupiter.api.Test;
 import Model.Value.*;
 import org.junit.jupiter.api.function.Executable;
 
+import java.io.BufferedReader;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AssignmentStatementTest {
@@ -31,7 +33,8 @@ class AssignmentStatementTest {
         this.not_match_type = new AssignmentStatement(new ValueExpression(new IntValue()), "b");
         this.sym_table.put("b", new BoolValue());
         this.id_not_declared = new AssignmentStatement(new ValueExpression(new BoolValue()),"c");
-        this.state = new ProgramState(new myStack<IStatement>(), this.sym_table, new myList<Value>(), this.id_not_declared);
+        this.state = new ProgramState(new myStack<IStatement>(), this.sym_table, new myList<Value>(),
+                new myDictionary<StringValue, BufferedReader>(), this.id_not_declared);
     }
 
     @Test
