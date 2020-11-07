@@ -26,17 +26,15 @@ public class Controller {
     //do oneStep until the stack is empty
     public void allSteps(){
         ProgramState ps = this.repo.getCurrentProgram();
-        System.out.println("Start of execution \n ------------------------------------------------------\n");
+        repo.logProgramStateExecution();
         while(!ps.getExecution_stack().empty()){
-            System.out.println("\nStep \n ------------------------------------------------------\n");
             try{
                 oneStep(ps);
-                System.out.println(ps.toString());
+                repo.logProgramStateExecution();
             }
             catch (Exception e){
                 throw new myException(e.getMessage());
             }
         }
-        System.out.println("------------------------------------------------------\nEnd of execution");
     }
 }

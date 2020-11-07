@@ -87,7 +87,7 @@ public class UI {
                 statement = new NopStatement();
         }
         ProgramState prg = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(), statement);
-        IRepository repo = new Repository(prg);
+        IRepository repo = new Repository(prg,"ok");
         Controller c = new Controller(repo);
         c.allSteps();
     }
