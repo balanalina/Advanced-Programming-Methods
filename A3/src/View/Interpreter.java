@@ -5,6 +5,7 @@ import ADT.myList;
 import ADT.myStack;
 import Controller.Controller;
 import Model.Expression.ArithmeticExpression;
+import Model.Expression.RelationalExpression;
 import Model.Expression.ValueExpression;
 import Model.Expression.VariableExpression;
 import Model.ProgramState;
@@ -88,6 +89,16 @@ public class Interpreter {
         IRepository repo6 = new Repository(prg6, "ex6.txt");
         Controller c6 = new Controller(repo6);
 
+        //int a; int b; Print(a<b);
+        IStatement ex7 = new CompoundStatement(new VariableDeclarationStatement("a",new IntType()),
+                new CompoundStatement(new VariableDeclarationStatement("b",new IntType()),
+                        new PrintStatement(new RelationalExpression(new VariableExpression("a"),
+                                new VariableExpression("b"),"SMALLER"))));
+        ProgramState prg7 = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(),
+                new myDictionary<StringValue, BufferedReader>(),ex7);
+        IRepository repo7 = new Repository(prg7, "ex7.txt");
+        Controller c7 = new Controller(repo7);
+
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0","exit"));
         menu.addCommand(new RunExampleCommand("1",ex1.toString(),c1));
@@ -96,6 +107,7 @@ public class Interpreter {
         menu.addCommand(new RunExampleCommand("4",ex4.toString(),c4));
         menu.addCommand(new RunExampleCommand("5",ex5.toString(),c5));
         menu.addCommand(new RunExampleCommand("6",ex6.toString(),c6));
+        menu.addCommand(new RunExampleCommand("7",ex7.toString(),c7));
 
         menu.show();
     }

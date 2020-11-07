@@ -2,19 +2,24 @@ package Model.Expression;
 
 import ADT.ImyDictionary;
 import Model.Exception.myException;
+import Model.Type.BoolType;
 import Model.Type.IntType;
 import Model.Type.Type;
+import Model.Value.BoolValue;
 import Model.Value.IntValue;
+import Model.Value.StringValue;
 import Model.Value.Value;
 
-enum arithmeticOperand{
-    PLUS("+"),
-    MINUS("-"),
-    MULTIPLICATION("*"),
-    DIVISION("/");
+enum relationalOperand{
+    SMALLER("<"),
+    SMALLEREQUAL("<="),
+    EQUAL("=="),
+    NOTEQUAL("!="),
+    GREATER(">"),
+    GREATEREQUAL(">=");
 
     private String value;
-    arithmeticOperand(String s) {
+    relationalOperand(String s) {
         this.value = s;
     }
 
@@ -24,20 +29,20 @@ enum arithmeticOperand{
     }
 }
 
-public class ArithmeticExpression implements IExpression {
+public class RelationalExpression implements IExpression {
     private IExpression e1;
     private IExpression e2;
-    private arithmeticOperand op;
+    private relationalOperand op;
 
-    public ArithmeticExpression(IExpression e1, IExpression e2, String op){
+    public RelationalExpression(IExpression e1, IExpression e2, String op){
         this.e1 = e1;
         this.e2 = e2;
         this.op = this.checkOp(op);
     }
 
-    private arithmeticOperand checkOp(String op) throws myException{
+    private relationalOperand checkOp(String op) throws myException{
         try{
-            return arithmeticOperand.valueOf(op);
+            return relationalOperand.valueOf(op);
         }
         catch (Exception e){
             throw new myException("Unexpected operand!");
@@ -61,17 +66,18 @@ public class ArithmeticExpression implements IExpression {
                 val2 = (IntValue)v2;
                 //return the result of the expression as a IntValue
                 switch (op){
-                    case PLUS:
-                        return new IntValue(val1.getValue() + val2.getValue());
-                    case MINUS:
-                        return new IntValue(val1.getValue() - val2.getValue());
-                    case MULTIPLICATION:
-                        return new IntValue(val1.getValue() * val2.getValue());
-                    case DIVISION:
-                        if(val2.getValue() == 0)
-                            throw new myException("Cannot divide by zero!");
-                        else
-                            return new IntValue(val1.getValue() / val2.getValue());
+                    case SMALLER:
+                        return new BoolValue(val1.getValue() < val2.getValue());
+                    case SMALLEREQUAL:
+                        return new BoolValue(val1.getValue() <= val2.getValue());
+                    case EQUAL:
+                        return new BoolValue(val1.getValue() == val2.getValue());
+                    case NOTEQUAL:
+                        return new BoolValue(val1.getValue() != val2.getValue());
+                    case GREATER:
+                        return new BoolValue(val1.getValue() > val2.getValue());
+                    case GREATEREQUAL:
+                        return new BoolValue(val1.getValue() >= val2.getValue());
                     default:
                         throw new myException("Unexpected operand!");
                 }
@@ -85,7 +91,7 @@ public class ArithmeticExpression implements IExpression {
 
     @Override
     public Type getType() {
-        return new IntType();
+        return new BoolType();
     }
 
     @Override
