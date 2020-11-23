@@ -1,0 +1,66 @@
+----Start of the execution---- 
+Execution Stack:
+[(Int a ; (Int b ; print(a<b);))]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(Int b ; print(a<b);), Int a]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(Int b ; print(a<b);)]
+Symbol Table:
+{a=0}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[print(a<b);, Int b]
+Symbol Table:
+{a=0}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[print(a<b);]
+Symbol Table:
+{a=0, b=0}
+Out Table:
+[]
+File Table:
+{}
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[]
+Symbol Table:
+{a=0, b=0}
+Out Table:
+[false]
+File Table:
+{}
+----End of execution---- 
+
