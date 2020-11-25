@@ -1,8 +1,9 @@
-package Model.Statement;
+package Model.Statement.File;
 
 import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
+import Model.Statement.IStatement;
 import Model.Type.StringType;
 import Model.Value.*;
 
@@ -18,7 +19,7 @@ public class CloseRFile implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws myException {
-        Value file_name = this.file_name_expression.eval(state.getSymbol_table());
+        Value file_name = this.file_name_expression.eval(state.getSymbol_table(), state.getHeap_table());
         if(file_name.getType().equals(new StringType())){
             if(state.getFile_table().containsKey((StringValue) file_name)){
                 BufferedReader bufferedReader = state.getFile_table().get((StringValue)file_name);

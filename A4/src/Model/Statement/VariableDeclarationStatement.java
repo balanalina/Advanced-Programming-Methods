@@ -3,9 +3,7 @@ package Model.Statement;
 import ADT.ImyDictionary;
 import Model.Exception.myException;
 import Model.ProgramState;
-import Model.Type.BoolType;
-import Model.Type.IntType;
-import Model.Type.Type;
+import Model.Type.*;
 import Model.Value.*;
 
 public class VariableDeclarationStatement implements IStatement{
@@ -29,7 +27,12 @@ public class VariableDeclarationStatement implements IStatement{
                 if(this.id_type.equals(new IntType()))
                     sym_table.put(this.identifier, new IntValue());
                 else
-                    sym_table.put(this.identifier, new StringValue());
+                    if(this.id_type.equals(new StringType()))
+                        sym_table.put(this.identifier, new StringValue());
+                    else {
+                        Type inner = ((ReferenceType)this.id_type).getInner();
+                        sym_table.put(this.identifier, new ReferenceType(inner).defaultValue());
+                    }
         }
         else
             throw new myException("Variable " + this.identifier + " has already been declared!");

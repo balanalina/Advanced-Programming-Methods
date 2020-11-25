@@ -1,14 +1,14 @@
 package Test.Statement;
 
 import ADT.myDictionary;
+import ADT.myHeap;
 import ADT.myList;
 import ADT.myStack;
 import Model.Exception.myException;
 import Model.Expression.ValueExpression;
 import Model.ProgramState;
 import Model.Statement.IStatement;
-import Model.Statement.IfStatement;
-import Model.Statement.OpenRFile;
+import Model.Statement.File.OpenRFile;
 import Model.Value.StringValue;
 import Model.Value.Value;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,7 +30,7 @@ class OpenRFileTest {
         this.test_statement = new OpenRFile(new ValueExpression(this.file));
         this.exception_statement = new OpenRFile(new ValueExpression(this.file));
         this.state = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(),
-                new myDictionary<StringValue, BufferedReader>(), this.test_statement);
+                new myDictionary<StringValue, BufferedReader>(), new myHeap<Value>(), this.test_statement);
     }
 
     @Test

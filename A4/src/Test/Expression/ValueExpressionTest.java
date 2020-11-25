@@ -1,6 +1,8 @@
 package Test.Expression;
 
+import ADT.ImyHeap;
 import ADT.myDictionary;
+import ADT.myHeap;
 import Model.Expression.ValueExpression;
 import Model.Type.BoolType;
 import Model.Type.IntType;
@@ -27,7 +29,7 @@ class ValueExpressionTest {
 
     @Test
     void eval() {
-        IntValue val_expr_eval = (IntValue)val_expr.eval(new myDictionary<String,Value>());
+        IntValue val_expr_eval = (IntValue)val_expr.eval(new myDictionary<String,Value>(), new myHeap<Value>());
         assertEquals(0, val_expr_eval.getValue());
     }
 }

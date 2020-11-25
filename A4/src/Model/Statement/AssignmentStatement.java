@@ -22,7 +22,7 @@ public class AssignmentStatement implements IStatement {
         //check if the variable was declared
         if(sym_table.containsKey(this.identifier)){
             //eval the expression
-            Value val = this.assigned_value.eval(sym_table);
+            Value val = this.assigned_value.eval(sym_table, state.getHeap_table());
             //check if declaration type and expression type match
             if(val.getType().equals(sym_table.get(this.identifier).getType())){
                 //assign the value to the variable

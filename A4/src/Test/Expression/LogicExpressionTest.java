@@ -1,7 +1,9 @@
 package Test.Expression;
 
 import ADT.ImyDictionary;
+import ADT.ImyHeap;
 import ADT.myDictionary;
+import ADT.myHeap;
 import Model.Exception.myException;
 import Model.Expression.*;
 import Model.Type.BoolType;
@@ -16,9 +18,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LogicExpressionTest {
     private ImyDictionary<String, Value> sym_table;
+    private ImyHeap<Value> heapTable;
 
     @BeforeEach
     void setUp() {
+        this.heapTable = new myHeap<>();
         this.sym_table = new myDictionary<String, Value>();
     }
 
@@ -29,17 +33,17 @@ class LogicExpressionTest {
             LogicExpression wrong_1_operand = new LogicExpression(new ValueExpression(new IntValue()),new VariableExpression("a"), "or");
             sym_table = new myDictionary<String, Value>();
             sym_table.put("a",new BoolValue(true));
-            wrong_1_operand.eval(sym_table);
+            wrong_1_operand.eval(sym_table, heapTable);
         });
         assertThrows(myException.class,() -> {
             IExpression wrong_2_operand = new LogicExpression(new ValueExpression(new BoolValue()),new VariableExpression("b"), "and");
             sym_table = new myDictionary<String, Value>();
             sym_table.put("b",new IntValue(52));
-            wrong_2_operand.eval(sym_table);
+            wrong_2_operand.eval(sym_table, heapTable);
         });
         IExpression logic_expr = new LogicExpression(new ValueExpression(new BoolValue()),new VariableExpression("a"),"and");
         sym_table.put("a",new BoolValue(true));
-        BoolValue expr = (BoolValue) logic_expr.eval(sym_table);
+        BoolValue expr = (BoolValue) logic_expr.eval(sym_table, heapTable);
         assertEquals(new BoolValue().getValue(), expr.getValue());
     }
 
@@ -47,6 +51,6 @@ class LogicExpressionTest {
     void getType() {
         sym_table.put("a",new BoolValue(true));
         IExpression logic_expr = new LogicExpression(new ValueExpression(new BoolValue()),new VariableExpression("a"),"and");
-        assertEquals(new BoolType(), logic_expr.eval(sym_table).getType());
+        assertEquals(new BoolType(), logic_expr.eval(sym_table, heapTable).getType());
     }
 }

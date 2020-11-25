@@ -5,10 +5,7 @@ import ADT.myList;
 import Model.Exception.myException;
 import Model.ProgramState;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class Repository implements IRepository {
     private ImyList<ProgramState> program;
@@ -18,6 +15,13 @@ public class Repository implements IRepository {
         this.program = new myList<ProgramState>();
         this.program.add(state);
         this.log_file = file_name;
+        try (PrintWriter writer = new PrintWriter(file_name)) {
+            writer.print("");
+            writer.close();
+        }
+        catch(IOException e){
+            throw new myException("Something went wrong! Cannot open file "+ this.log_file+"!");
+        }
     }
 
     @Override

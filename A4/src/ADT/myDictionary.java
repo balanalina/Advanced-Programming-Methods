@@ -6,6 +6,7 @@ import java.util.*;
 
 public class myDictionary<K,V> implements ImyDictionary<K,V> {
     private HashMap<K,V> dictionary;
+
     public myDictionary(){
         this.dictionary = new HashMap<K,V>();
     }

@@ -1,6 +1,7 @@
 package Model.Expression;
 
 import ADT.ImyDictionary;
+import ADT.ImyHeap;
 import Model.Exception.myException;
 import Model.Type.BoolType;
 import Model.Type.Type;
@@ -33,14 +34,14 @@ public class LogicExpression implements IExpression{
     }
 
     @Override
-    public Value eval(ImyDictionary<String, Value> symTable) throws myException {
+    public Value eval(ImyDictionary<String, Value> symTable, ImyHeap<Value> heapTable) throws myException {
         Value v1,v2;
         //get the value of the first operand
-        v1 = e1.eval(symTable);
+        v1 = e1.eval(symTable, heapTable);
         //if the value it is not our defined BoolType throw an exception
         if(v1.getType().equals(new BoolType())) {
             //get the value of the second operand
-            v2 = e2.eval(symTable);
+            v2 = e2.eval(symTable, heapTable);
             //we check the type for the second value and throw an exception if needed
             if(v2.getType().equals(new BoolType())){
                 //cast the expressions' values to BoolValue

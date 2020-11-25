@@ -1,6 +1,7 @@
 package Test.Statement;
 
 import ADT.myDictionary;
+import ADT.myHeap;
 import ADT.myList;
 import ADT.myStack;
 import Model.Exception.myException;
@@ -37,7 +38,7 @@ class IfStatementTest {
         this.test_statement = new IfStatement(new LogicExpression(new ValueExpression(new BoolValue()),new ValueExpression(new BoolValue(true)),
                 "or"),this.first_stmt, this.second_stmt);
         this.state = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(),
-                new myDictionary<StringValue, BufferedReader>(), this.test_statement);
+                new myDictionary<StringValue, BufferedReader>(), new myHeap<Value>(), this.test_statement);
         this.int_condition = new IfStatement(new ArithmeticExpression(new ValueExpression(new IntValue()),
                 new ValueExpression(new IntValue(-5)),"MINUS"),this.first_stmt, this.second_stmt);
     }

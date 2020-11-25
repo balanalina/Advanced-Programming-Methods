@@ -1,6 +1,7 @@
 package Model.Expression;
 
 import ADT.ImyDictionary;
+import ADT.ImyHeap;
 import Model.Exception.myException;
 import Model.Type.Type;
 import Model.Value.Value;
@@ -22,7 +23,7 @@ public class ValueExpression implements IExpression {
 
     //returns the value
     @Override
-    public Value eval(ImyDictionary<String, Value> symTable) throws myException {
+    public Value eval(ImyDictionary<String, Value> symTable, ImyHeap<Value> heapTable) throws myException {
         return this.val;
     }
 }

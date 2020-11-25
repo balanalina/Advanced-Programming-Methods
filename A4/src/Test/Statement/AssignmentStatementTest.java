@@ -1,9 +1,6 @@
 package Test.Statement;
 
-import ADT.ImyDictionary;
-import ADT.myDictionary;
-import ADT.myList;
-import ADT.myStack;
+import ADT.*;
 import Model.Exception.myException;
 import Model.Expression.ValueExpression;
 import Model.ProgramState;
@@ -34,7 +31,7 @@ class AssignmentStatementTest {
         this.sym_table.put("b", new BoolValue());
         this.id_not_declared = new AssignmentStatement(new ValueExpression(new BoolValue()),"c");
         this.state = new ProgramState(new myStack<IStatement>(), this.sym_table, new myList<Value>(),
-                new myDictionary<StringValue, BufferedReader>(), this.id_not_declared);
+                new myDictionary<StringValue, BufferedReader>(), new myHeap<Value>(), this.id_not_declared);
     }
 
     @Test

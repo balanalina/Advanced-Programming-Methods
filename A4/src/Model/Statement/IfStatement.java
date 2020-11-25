@@ -24,7 +24,7 @@ public class IfStatement implements IStatement{
         ImyStack<IStatement> stack = state.getExecution_stack();
         ImyDictionary<String, Value> sym_table = state.getSymbol_table();
         //eval the conditional expression
-        Value cond_val = this.condition.eval(sym_table);
+        Value cond_val = this.condition.eval(sym_table, state.getHeap_table());
         //check if condition evaluates to our BoolType
         if(cond_val.getType().equals(new BoolType())){
             //push to the stack the corresponding statement to be executed depending of the condition evaluation

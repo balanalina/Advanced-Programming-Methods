@@ -1,6 +1,7 @@
 package Test.Statement;
 
 import ADT.myDictionary;
+import ADT.myHeap;
 import ADT.myList;
 import ADT.myStack;
 import Model.Expression.ValueExpression;
@@ -31,7 +32,7 @@ class CompoundStatementTest {
         this.second_stmt = new PrintStatement(new ValueExpression(new BoolValue(true)));
         this.test_statement = new CompoundStatement(this.first_stmt, this.second_stmt);
         this.state = new ProgramState(new myStack<IStatement>(), new myDictionary<String,Value>(), new myList<Value>(),
-                new myDictionary<StringValue, BufferedReader>(), this.test_statement);
+                new myDictionary<StringValue, BufferedReader>(),new myHeap<Value>(), this.test_statement);
         this.state.getExecution_stack().push(this.test_statement);
     }
 

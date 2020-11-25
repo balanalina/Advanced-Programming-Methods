@@ -1,6 +1,7 @@
 package Model.Expression;
 
 import ADT.ImyDictionary;
+import ADT.ImyHeap;
 import Model.Exception.myException;
 import Model.Type.Type;
 import Model.Value.IntValue;
@@ -22,7 +23,7 @@ public class VariableExpression implements IExpression {
 
     //look for the identifier in the symbol table
     @Override
-    public Value eval(ImyDictionary<String, Value> symTable) throws myException {
+    public Value eval(ImyDictionary<String, Value> symTable, ImyHeap<Value> heapTable) throws myException {
         this.value = symTable.get(this.identifier);
         return this.value;
     }

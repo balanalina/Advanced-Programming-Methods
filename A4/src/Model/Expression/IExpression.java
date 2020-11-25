@@ -1,13 +1,14 @@
 package Model.Expression;
 
 import ADT.ImyDictionary;
+import ADT.ImyHeap;
 import Model.Exception.myException;
 import Model.Type.Type;
 import Model.Value.Value;
 
 public interface IExpression {
 
-    Value eval(ImyDictionary<String,Value> symTable) throws myException;
+    Value eval(ImyDictionary<String,Value> symTable, ImyHeap<Value> heapTable) throws myException;
 
     public String toString();
 
