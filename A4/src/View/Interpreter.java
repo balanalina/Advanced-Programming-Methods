@@ -141,6 +141,18 @@ public class Interpreter {
         IRepository repo10 = new Repository(prg10, "ex10.txt");
         Controller c10 = new Controller(repo10);
 
+        //Ref int v;new(v,20);Ref Ref int a; new(a,v); new(v,30);print(rH(rH(a)))
+        IStatement ex11 = new CompoundStatement(new VariableDeclarationStatement("v",new ReferenceType(new IntType())),
+                new CompoundStatement(new NewReference("v",new ValueExpression(new IntValue(20))),
+                        new CompoundStatement(new VariableDeclarationStatement("a",new ReferenceType(new ReferenceType(new IntType()))),
+                                new CompoundStatement(new NewReference("a",new VariableExpression("v")),
+                                        new CompoundStatement(new NewReference("v",new ValueExpression(new IntValue(30))),
+                                                new PrintStatement(new ReadHeap(new ReadHeap(new VariableExpression("a")))))))));
+        ProgramState prg11 = new ProgramState(new myStack<IStatement>(), new myDictionary<String, Value>(), new myList<Value>(),
+                new myDictionary<StringValue, BufferedReader>(), new myHeap<Value>(), ex11);
+        IRepository repo11 = new Repository(prg11, "ex11.txt");
+        Controller c11 = new Controller(repo11);
+
 
         TextMenu menu = new TextMenu();
         menu.addCommand(new ExitCommand("0","exit"));
@@ -154,6 +166,7 @@ public class Interpreter {
         menu.addCommand(new RunExampleCommand("8",ex8.toString(),c8));
         menu.addCommand(new RunExampleCommand("9",ex9.toString(),c9));
         menu.addCommand(new RunExampleCommand("10",ex10.toString(),c10));
+        menu.addCommand(new RunExampleCommand("11",ex11.toString(),c11));
         menu.show();
     }
 }
