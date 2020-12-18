@@ -1,5 +1,6 @@
 package Model.Statement.Heap;
 
+import ADT.ImyDictionary;
 import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
@@ -42,4 +43,14 @@ public class NewReference implements IStatement {
 
     @Override
     public String toString(){ return "new_reference( " + this.variable_name.toString() + ", " + this.expression.toString() + " );"; }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type variableType = typeEnv.get(this.variable_name);
+        Type expressionType = this.expression.typeCheck(typeEnv);
+        if(variableType.equals(new ReferenceType(expressionType)))
+            return typeEnv;
+        else
+            throw new myException("The operands have different types!");
+    }
 }

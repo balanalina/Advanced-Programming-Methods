@@ -65,6 +65,20 @@ public class LogicExpression implements IExpression{
     }
 
     @Override
+    public Type typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type type1, type2;
+        type1 = this.e1.typeCheck(typeEnv);
+        type2 = this.e2.typeCheck(typeEnv);
+        if(type1.equals(new BoolType()))
+            if(type2.equals(new BoolType()))
+                return new BoolType();
+            else
+                throw new myException("The second operand is not boolean!");
+            else
+                throw new myException("The first operand is not a boolean!");
+    }
+
+    @Override
     public Type getType() {
         return new BoolType();
     }

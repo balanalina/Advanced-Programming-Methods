@@ -1,10 +1,12 @@
 package Model.Statement.File;
 
+import ADT.ImyDictionary;
 import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
 import Model.Statement.IStatement;
 import Model.Type.StringType;
+import Model.Type.Type;
 import Model.Value.*;
 
 import java.io.BufferedReader;
@@ -40,4 +42,13 @@ public class CloseRFile implements IStatement {
 
     @Override
     public String toString(){ return "CloseRFile(" + this.file_name_expression + ");"; }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type fileType = this.file_name_expression.typeCheck(typeEnv);
+        if(fileType.equals(new StringType()))
+            return typeEnv;
+        else
+            throw new myException("File name must be of String Type!");
+    }
 }

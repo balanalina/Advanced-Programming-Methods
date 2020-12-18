@@ -12,5 +12,7 @@ public interface IExpression {
 
     public String toString();
 
+    Type typeCheck(ImyDictionary<String, Type> typeEnv) throws myException;
+
     Type getType();
 }

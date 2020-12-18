@@ -17,10 +17,7 @@ import Model.Statement.File.OpenRFile;
 import Model.Statement.File.ReadFile;
 import Model.Statement.Heap.NewReference;
 import Model.Statement.Heap.WriteHeap;
-import Model.Type.BoolType;
-import Model.Type.IntType;
-import Model.Type.ReferenceType;
-import Model.Type.StringType;
+import Model.Type.*;
 import Model.Value.*;
 import Repository.IRepository;
 import Repository.Repository;
@@ -68,6 +65,7 @@ public class Interpreter {
                 new myDictionary<StringValue, BufferedReader>(), new myHeap<Value>(), ex4);
         IRepository repo4 = new Repository(prg4,"ex4.txt");
         Controller c4 = new Controller(repo4);
+
 
         //string s; s=ana; Print(s);
         IStatement ex5 = new CompoundStatement(new VariableDeclarationStatement("s", new StringType()),

@@ -4,6 +4,7 @@ import ADT.ImyDictionary;
 import ADT.myStack;
 import Model.Exception.myException;
 import Model.ProgramState;
+import Model.Type.Type;
 import Model.Value.*;
 
 public class ForkStatement implements IStatement {
@@ -21,5 +22,11 @@ public class ForkStatement implements IStatement {
     @Override
     public String toString(){
         return "Fork( " + this.statement.toString() + " );";
+    }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        this.statement.typeCheck(typeEnv.cloneDictionary());
+        return typeEnv;
     }
 }

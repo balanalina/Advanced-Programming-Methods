@@ -1,11 +1,9 @@
 package Model;
 
-import ADT.ImyDictionary;
-import ADT.ImyHeap;
-import ADT.ImyList;
-import ADT.ImyStack;
+import ADT.*;
 import Model.Exception.myException;
 import Model.Statement.IStatement;
+import Model.Type.Type;
 import Model.Value.*;
 
 import java.io.BufferedReader;
@@ -28,6 +26,7 @@ public class ProgramState {
         this.file_table = file;
         this.heap_table = heap;
         this.original_program = prg;
+        this.original_program.typeCheck(new myDictionary<String, Type>());
         this.execution_stack.push(prg);
         this.thread_id = generateID();
     }

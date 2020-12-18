@@ -1,11 +1,13 @@
 package Model.Statement.File;
 
+import ADT.ImyDictionary;
 import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
 import Model.Statement.IStatement;
 import Model.Type.IntType;
 import Model.Type.StringType;
+import Model.Type.Type;
 import Model.Value.*;
 
 import java.io.BufferedReader;
@@ -56,5 +58,18 @@ public class ReadFile implements IStatement {
     @Override
     public String toString(){
         return "ReadFile("+ this.file_name_expression + ", " + this.variable_name + ");";
+    }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type fileType = this.file_name_expression.typeCheck(typeEnv);
+        Type variableType = typeEnv.get(this.variable_name);
+        if(fileType.equals(new StringType()))
+            if(variableType.equals(new IntType()))
+                return typeEnv;
+            else
+                throw new myException("Variable must be of Int Type!");
+        else
+            throw new myException("File name must be of String Type!");
     }
 }

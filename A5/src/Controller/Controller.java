@@ -29,7 +29,7 @@ public class Controller {
         this.service = Executors.newFixedThreadPool(2);
         List<ProgramState> list = removeCompleted(this.repo.getProgramList());
         while(list.size() > 0){
-            executeGarbageCollector();
+            //executeGarbageCollector();
             oneStepForAll(list);
             list = removeCompleted(this.repo.getProgramList());
         }

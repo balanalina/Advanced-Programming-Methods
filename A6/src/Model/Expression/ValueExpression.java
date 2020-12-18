@@ -17,6 +17,11 @@ public class ValueExpression implements IExpression {
     public String toString(){ return this.val.toString(); }
 
     @Override
+    public Type typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        return this.val.getType();
+    }
+
+    @Override
     public Type getType(){
         return this.val.getType();
     }

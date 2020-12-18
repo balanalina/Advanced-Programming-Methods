@@ -6,6 +6,7 @@ import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
 import Model.Type.BoolType;
+import Model.Type.Type;
 import Model.Value.*;
 
 public class IfStatement implements IStatement{
@@ -41,5 +42,17 @@ public class IfStatement implements IStatement{
     @Override
     public String toString(){
         return "if("+this.condition.toString()+"){ " + this.then.toString() + " } else{ " + this.otherwise.toString() + "}";
+    }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type expressionType = this.condition.typeCheck(typeEnv);
+        if(expressionType.equals(new BoolType())) {
+            this.then.typeCheck(typeEnv.cloneDictionary());
+            this.otherwise.typeCheck(typeEnv.cloneDictionary());
+            return typeEnv;
+        }
+        else
+            throw new myException("The if condition does not evaluate to a boolean value!");
     }
 }

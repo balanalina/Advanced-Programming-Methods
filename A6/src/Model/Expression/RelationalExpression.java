@@ -97,4 +97,18 @@ public class RelationalExpression implements IExpression {
 
     @Override
     public String toString() { return this.e1 + this.op.toString() + this.e2;}
+
+    @Override
+    public Type typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type type1, type2;
+        type1 = this.e1.typeCheck(typeEnv);
+        type2 = this.e2.typeCheck(typeEnv);
+        if(type1.equals(new IntType()))
+            if(type2.equals(new IntType()))
+                return new BoolType();
+            else
+                throw new myException("The second operand is not an integer!");
+            else
+                throw new myException("The first operand is not an integer!");
+    }
 }

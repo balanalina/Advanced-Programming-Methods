@@ -5,6 +5,7 @@ import ADT.ImyStack;
 import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
+import Model.Type.Type;
 import Model.Value.*;
 
 public class AssignmentStatement implements IStatement {
@@ -39,5 +40,14 @@ public class AssignmentStatement implements IStatement {
     @Override
     public String toString(){
         return this.identifier + "=" + this.assigned_value;
+    }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type variableType = typeEnv.get(this.identifier);
+        Type valueType = this.assigned_value.typeCheck(typeEnv);
+        if(variableType.equals(valueType))
+            return typeEnv;
+        else throw new myException("The variable " + this.identifier + " type does not match the expression type!");
     }
 }

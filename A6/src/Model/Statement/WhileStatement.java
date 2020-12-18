@@ -1,10 +1,12 @@
 package Model.Statement;
 
+import ADT.ImyDictionary;
 import ADT.ImyStack;
 import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
 import Model.Type.BoolType;
+import Model.Type.Type;
 import Model.Value.BoolValue;
 
 public class WhileStatement implements IStatement {
@@ -36,5 +38,16 @@ public class WhileStatement implements IStatement {
     @Override
     public String toString(){
         return "while(" + this.condition.toString() + ") {" + this.body.toString() + " }";
+    }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type expressionType = this.condition.typeCheck(typeEnv);
+        if(expressionType.equals(new BoolType())) {
+            this.body.typeCheck(typeEnv.cloneDictionary());
+            return typeEnv;
+        }
+        else
+            throw new myException("Condition does not evaluate to a boolean!");
     }
 }

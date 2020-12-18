@@ -38,6 +38,18 @@ public class ReadHeap implements IExpression {
     }
 
     @Override
+    public Type typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type  type = this.expression.typeCheck(typeEnv);
+        if(type instanceof ReferenceType) {
+            ReferenceType referenceType = (ReferenceType)type;
+            return referenceType.getInner();
+        }
+        else
+            throw new myException("The ReadHeap argument is not of Reference Type!");
+
+    }
+
+    @Override
     public Type getType() {
         return new ReferenceType();
     }

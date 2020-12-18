@@ -21,6 +21,11 @@ public class VariableExpression implements IExpression {
         return this.identifier;
     }
 
+    @Override
+    public Type typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        return typeEnv.get(this.identifier);
+    }
+
     //look for the identifier in the symbol table
     @Override
     public Value eval(ImyDictionary<String, Value> symTable, ImyHeap<Value> heapTable) throws myException {

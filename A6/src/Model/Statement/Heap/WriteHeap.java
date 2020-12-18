@@ -1,11 +1,15 @@
 package Model.Statement.Heap;
 
+import ADT.ImyDictionary;
 import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
 import Model.Statement.IStatement;
 import Model.Type.ReferenceType;
+import Model.Type.Type;
 import Model.Value.*;
+
+import java.sql.Ref;
 
 public class WriteHeap implements IStatement {
     String variable_name;
@@ -44,5 +48,18 @@ public class WriteHeap implements IStatement {
     @Override
     public String toString(){
         return "WriteHeap(" + this.variable_name + ", "+this.expression.toString() +" );";
+    }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        Type variableType = typeEnv.get(this.variable_name);
+        Type expressionType = this.expression.typeCheck(typeEnv);
+        if(variableType instanceof ReferenceType)
+            if(variableType.equals(new ReferenceType(expressionType)))
+                return typeEnv;
+            else
+                throw new myException("The operands have different types!");
+        else
+            throw new myException("Variable Type is not of reference type!");
     }
 }

@@ -1,9 +1,11 @@
 package Model.Statement;
 
+import ADT.ImyDictionary;
 import ADT.ImyList;
 import Model.Exception.myException;
 import Model.Expression.IExpression;
 import Model.ProgramState;
+import Model.Type.Type;
 import Model.Value.*;
 
 public class PrintStatement implements IStatement {
@@ -24,5 +26,11 @@ public class PrintStatement implements IStatement {
     @Override
     public String toString(){
         return "print(" + this.expression.toString() + ");";
+    }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        this.expression.typeCheck(typeEnv);
+        return typeEnv;
     }
 }

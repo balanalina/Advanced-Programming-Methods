@@ -43,4 +43,10 @@ public class VariableDeclarationStatement implements IStatement{
     public String toString(){
         return this.id_type.toString() + " " + this.identifier;
     }
+
+    @Override
+    public ImyDictionary<String, Type> typeCheck(ImyDictionary<String, Type> typeEnv) throws myException {
+        typeEnv.put(this.identifier, this.id_type);
+        return typeEnv;
+    }
 }
