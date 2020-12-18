@@ -1,0 +1,130 @@
+----Start of the execution---- 
+Execution Stack:
+[(Ref( Int ) v ; (new_reference( v, 20 ); ; (print(ReadHeap(v) ); ; (WriteHeap(v, 30 ); ; print(ReadHeap(v) +5);))))]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(new_reference( v, 20 ); ; (print(ReadHeap(v) ); ; (WriteHeap(v, 30 ); ; print(ReadHeap(v) +5);))), Ref( Int ) v]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(new_reference( v, 20 ); ; (print(ReadHeap(v) ); ; (WriteHeap(v, 30 ); ; print(ReadHeap(v) +5);)))]
+Symbol Table:
+{v=Ref( 0, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(print(ReadHeap(v) ); ; (WriteHeap(v, 30 ); ; print(ReadHeap(v) +5);)), new_reference( v, 20 );]
+Symbol Table:
+{v=Ref( 0, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(print(ReadHeap(v) ); ; (WriteHeap(v, 30 ); ; print(ReadHeap(v) +5);))]
+Symbol Table:
+{v=Ref( 2374, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2374 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(WriteHeap(v, 30 ); ; print(ReadHeap(v) +5);), print(ReadHeap(v) );]
+Symbol Table:
+{v=Ref( 2374, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2374 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[(WriteHeap(v, 30 ); ; print(ReadHeap(v) +5);)]
+Symbol Table:
+{v=Ref( 2374, Int )}
+Out Table:
+[20]
+File Table:
+{}
+Heap Table:
+[ 2374 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[print(ReadHeap(v) +5);, WriteHeap(v, 30 );]
+Symbol Table:
+{v=Ref( 2374, Int )}
+Out Table:
+[20]
+File Table:
+{}
+Heap Table:
+[ 2374 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[print(ReadHeap(v) +5);]
+Symbol Table:
+{v=Ref( 2374, Int )}
+Out Table:
+[20]
+File Table:
+{}
+Heap Table:
+[ 2374 -> 30 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Execution Stack:
+[]
+Symbol Table:
+{v=Ref( 2374, Int )}
+Out Table:
+[20, 35]
+File Table:
+{}
+Heap Table:
+[ 2374 -> 30 , ]
+----End of execution---- 
+
