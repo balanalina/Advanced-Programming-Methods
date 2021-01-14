@@ -1,0 +1,140 @@
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(Int v ; (v=2 ; print(v);))]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(v=2 ; print(v);), Int v]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(v=2 ; print(v);), Int v]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(v=2 ; print(v);)]
+Symbol Table:
+{v=0}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(v=2 ; print(v);)]
+Symbol Table:
+{v=0}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[print(v);, v=2]
+Symbol Table:
+{v=0}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[print(v);, v=2]
+Symbol Table:
+{v=0}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[print(v);]
+Symbol Table:
+{v=2}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[print(v);]
+Symbol Table:
+{v=2}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[]
+Symbol Table:
+{v=2}
+Out Table:
+[2]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+

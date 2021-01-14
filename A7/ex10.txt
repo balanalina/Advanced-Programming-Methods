@@ -1,0 +1,308 @@
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(Ref( Int ) v ; (new_reference( v, 20 ); ; (Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)))))]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( v, 20 ); ; (Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)))), Ref( Int ) v]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( v, 20 ); ; (Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)))), Ref( Int ) v]
+Symbol Table:
+{}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( v, 20 ); ; (Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );))))]
+Symbol Table:
+{v=Ref( 0, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( v, 20 ); ; (Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );))))]
+Symbol Table:
+{v=Ref( 0, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );))), new_reference( v, 20 );]
+Symbol Table:
+{v=Ref( 0, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );))), new_reference( v, 20 );]
+Symbol Table:
+{v=Ref( 0, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[  ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)))]
+Symbol Table:
+{v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(Ref( Ref( Int ) ) a ; (new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)))]
+Symbol Table:
+{v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)), Ref( Ref( Int ) ) a]
+Symbol Table:
+{v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)), Ref( Ref( Int ) ) a]
+Symbol Table:
+{v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );))]
+Symbol Table:
+{a=Ref( 0, Ref( Int ) ), v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( a, v ); ; (new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );))]
+Symbol Table:
+{a=Ref( 0, Ref( Int ) ), v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );), new_reference( a, v );]
+Symbol Table:
+{a=Ref( 0, Ref( Int ) ), v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );), new_reference( a, v );]
+Symbol Table:
+{a=Ref( 0, Ref( Int ) ), v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)]
+Symbol Table:
+{a=Ref( 2346, Ref( Int ) ), v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 ,2346 -> Ref( 2804, Int ) , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[(new_reference( v, 30 ); ; print(ReadHeap(ReadHeap(a) ) );)]
+Symbol Table:
+{a=Ref( 2346, Ref( Int ) ), v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 ,2346 -> Ref( 2804, Int ) , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[print(ReadHeap(ReadHeap(a) ) );, new_reference( v, 30 );]
+Symbol Table:
+{a=Ref( 2346, Ref( Int ) ), v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 ,2346 -> Ref( 2804, Int ) , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[print(ReadHeap(ReadHeap(a) ) );, new_reference( v, 30 );]
+Symbol Table:
+{a=Ref( 2346, Ref( Int ) ), v=Ref( 2804, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 ,2346 -> Ref( 2804, Int ) , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[print(ReadHeap(ReadHeap(a) ) );]
+Symbol Table:
+{a=Ref( 2346, Ref( Int ) ), v=Ref( 1630, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 ,2346 -> Ref( 2804, Int ) ,1630 -> 30 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[print(ReadHeap(ReadHeap(a) ) );]
+Symbol Table:
+{a=Ref( 2346, Ref( Int ) ), v=Ref( 1630, Int )}
+Out Table:
+[]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 ,2346 -> Ref( 2804, Int ) ,1630 -> 30 , ]
+----End of execution---- 
+
+----Start of the execution---- 
+Thread ID: 1
+Execution Stack:
+[]
+Symbol Table:
+{a=Ref( 2346, Ref( Int ) ), v=Ref( 1630, Int )}
+Out Table:
+[20]
+File Table:
+{}
+Heap Table:
+[ 2804 -> 20 ,2346 -> Ref( 2804, Int ) ,1630 -> 30 , ]
+----End of execution---- 
+
