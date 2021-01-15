@@ -43,24 +43,23 @@ public class Controller {
     }
 
     private void oneStepForAll(List<ProgramState> list) throws InterruptedException {
-        list.forEach(programState -> {
-            this.repo.logProgramStateExecution(programState);
-        });
+        list.forEach(prg->{repo.logProgramStateExecution(prg);
+            System.out.println(prg);});
 
-        List<Callable<ProgramState>> callList = list.stream().map((ProgramState p) -> (Callable<ProgramState>) (() -> {
-            return p.oneStep();
-        })).collect(Collectors.toList());
+        List<Callable<ProgramState>> callList = list.stream().filter(p->!p.getExecution_stack().empty()).
+                map((ProgramState p)->(Callable<ProgramState>)(p::oneStep)).collect(Collectors.toList());
 
-        List<ProgramState> newProgramList = service.invokeAll(callList).stream().map(future -> {
-            try {
+        List<ProgramState> newProgramList = service.invokeAll(callList).stream().map(future->{
+            try{
                 return future.get();
-            } catch(myException | InterruptedException | ExecutionException exc){
+            }
+            catch (myException | InterruptedException | ExecutionException exc){
                 throw new myException(exc.getMessage());
             }
-        }).filter(p -> p != null).collect(Collectors.toList());
-
+        }).filter(Objects::nonNull).collect(Collectors.toList());
         list.addAll(newProgramList);
-        list.forEach(prg -> this.repo.logProgramStateExecution(prg));
+        list.forEach(prg->{
+            System.out.println(prg);repo.logProgramStateExecution(prg);});
         repo.setProgramList(list);
     }
 
